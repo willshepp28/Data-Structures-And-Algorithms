@@ -59,6 +59,7 @@ class SinglyLinkedList{
         }
     }
 
+    // deletes last node from list
     pop(){  
         
 
@@ -89,7 +90,7 @@ class SinglyLinkedList{
 
     }
 
-
+    // delete first node from the beginning of the list
     shift(){
 
         if(!this.head) { return undefined; }
@@ -102,6 +103,22 @@ class SinglyLinkedList{
             return undefined;
         }
 
+    }
+
+    // add new node to the beginning of the list
+    unshift(val){
+
+        if(!this.head){
+            this.push(val);
+            return;
+        }
+
+        let newHead = new Node(val);
+        let oldHead = this.head;
+
+        this.head = newHead;
+        this.head.next = oldHead;
+        this.length++;
     }
     
 }
