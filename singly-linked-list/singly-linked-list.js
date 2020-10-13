@@ -120,5 +120,24 @@ class SinglyLinkedList{
         this.head.next = oldHead;
         this.length++;
     }
+
+        // takes a number, index, or position, and it returns the item in that position
+        getNodeByIndex(index){
+            if(!this.head){ return undefined}
+    
+            if(index < 0 || this.length - 1 < index){ return null;}
+    
+            let i = 0;
+            let currentNode = this.head; 
+    
+    
+            while(i <= index) {
+               if(i === index){ return currentNode; }
+    
+                currentNode = currentNode.next;
+                i++;
+            }
+    
+        }
     
 }
