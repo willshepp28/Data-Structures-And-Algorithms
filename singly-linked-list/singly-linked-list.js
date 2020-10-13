@@ -24,6 +24,16 @@ class SinglyLinkedList{
         return this;
     }
 
+    size(){
+        return this.length;
+    }
+
+    clearList(){
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+
     push(val){
         var newNode = new Node(val);
 
@@ -61,9 +71,12 @@ class SinglyLinkedList{
 
         // loop throught list while there are nodes
         while(node){
-           
 
-        
+            if(this.length === 0){
+                this.clearList();
+                break;
+            }
+           
             if(node.next.next === null){
                 node.next = null;
                 this.tail = node;
@@ -72,6 +85,21 @@ class SinglyLinkedList{
             }
 
             node = node.next;
+        }
+
+    }
+
+
+    shift(){
+
+        if(!this.head) { return undefined; }
+
+        this.head = this.head.next;
+        this.length--;
+
+        if(this.length === 0){ 
+            this.clearList()
+            return undefined;
         }
 
     }
