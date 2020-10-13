@@ -139,5 +139,14 @@ class SinglyLinkedList{
             }
     
         }
+
+        // update the data in a node based off of its index
+        updateNodeByIndex(index, value){
+            let node = this.getNodeByIndex(index);
+    
+            if(node){
+                node.data = value;
+            } 
+        }
     
 }
