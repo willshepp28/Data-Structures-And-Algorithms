@@ -148,5 +148,24 @@ class SinglyLinkedList{
                 node.data = value;
             } 
         }
+
+        insert(index, value){
+            if(!this.head) { return undefined}
+            if(index < 0 || this.length < index){ return null;}
+    
+            // if index is at the starting position 
+            if(index === 0) {  return this.unshift(value)}
+    
+            // if index is at the end position
+            if(index === this.length) { return this.push(value)}
+    
+            let newNode = new Node(value);
+            let previousNode = this.getNodeByIndex(index - 1);
+            let temporaryNode = previousNode.next;
+            previousNode.next = newNode;
+            newNode.next = temporaryNode;
+            this.length++;
+            return true;
+        }  
     
 }
