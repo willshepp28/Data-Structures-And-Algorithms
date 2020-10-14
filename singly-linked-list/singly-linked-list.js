@@ -167,5 +167,26 @@ class SinglyLinkedList{
             this.length++;
             return true;
         }  
+
+        remove(index){
+            if(!this.head){ return undefined};
+            if(index < 0 || this.length <= index){ return null};
+    
+    
+           // get the node at the index 
+           // get the previous node of the node getting delee
+           // store the next of that node thats getting deleted in varable
+            let deletedNode = this.getNodeByIndex(index);
+            let childNodeOfDeleted = deletedNode.next;
+    
+            if(index === 0){
+                this.head = childNodeOfDeleted;
+                return;
+            }
+    
+            let previousNode = this.getNodeByIndex(index - 1);
+            previousNode.next = childNodeOfDeleted;
+            this.length--;
+        }
     
 }
