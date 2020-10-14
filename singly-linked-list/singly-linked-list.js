@@ -188,5 +188,21 @@ class SinglyLinkedList{
             previousNode.next = childNodeOfDeleted;
             this.length--;
         }
+
+        reverse(){
+            let oldHead = this.head; // to save a reference to the original head before changing it to the tail
+            this.head = this.tail; // switching the tail to the head
+            this.tail = oldHead; // switching the original head to the tail
+            let next;
+            let previous = null;
+    
+            for(let i = 0; i < this.length; i++) {
+                next = oldHead.next;
+                oldHead.next = previous;
+                previous = oldHead;
+                oldHead = next;
+            }
+            return this;
+        }
     
 }
