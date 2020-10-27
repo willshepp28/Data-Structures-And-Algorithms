@@ -2,7 +2,7 @@ const states = require("./mock.data");
 
 
 
-const getStateLinearSearch = (array, value) => {
+const getStatesUsingLinearSearch = (array, value) => {
 
     if(!array && !value) { return undefined; }
 
@@ -19,6 +19,6 @@ const getStateLinearSearch = (array, value) => {
 
 
 
-console.log(getStateLinearSearch(states, "South Carolina"))
+console.log(getStatesUsingLinearSearch(states, "South Carolina"))
 
-console.log(getStateLinearSearch(states, "Not a State"))
+console.log(getStatesUsingLinearSearch(states, "Not a State"))
