@@ -10,10 +10,8 @@ const getStatesUsingLinearSearch = (array, value) => {
         if(array[i] === value) {
             return i;
         }
-        if(i + 1 === array.length && array[i] !== value) {
-            return - 1;
-        }
     }
+    return -1;
 };
 
 
