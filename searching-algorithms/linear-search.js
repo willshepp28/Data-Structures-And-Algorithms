@@ -6,11 +6,11 @@ const getStatesUsingLinearSearch = (array, value) => {
 
     if(!array && !value) { return undefined; }
 
-    for(let i = 0; i < states.length; i++) {
-        if(states[i] === value) {
+    for(let i = 0; i < array.length; i++) {
+        if(array[i] === value) {
             return i;
         }
-        if(i + 1 === states.length && states[i] !== value) {
+        if(i + 1 === array.length && array[i] !== value) {
             return - 1;
         }
     }
